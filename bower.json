@@ -1,0 +1,26 @@
+{
+  "name": "KPI",
+  "description": "KPI, HDC",
+  "main": "",
+  "authors": [
+    "Satit Rianpit <siteslave@msn.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "KPI",
+    "HDC"
+  ],
+  "homepage": "https://github.com/siteslave/kpi",
+  "moduleType": [],
+  "private": true,
+  "dependencies": {
+    "angular-nvd3": "~1.0.2",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "4.0.0-alpha",
+    "font-awesome": "~4.4.0",
+    "lodash": "~3.10.1",
+    "moment": "~2.10.6",
+    "ngprogress": "~1.1.2",
+    "tether": "~1.1.0"
+  }
+}

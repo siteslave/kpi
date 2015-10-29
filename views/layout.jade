@@ -1,0 +1,103 @@
+doctype html
+html(lang="en", ng-app="kpi")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    meta(name="description", content="Health Data Center on the Cloud")
+    meta(name="author", content="Satit Rianpit <rianpit@gmail.com>")
+      
+    link(rel="stylesheet", href="/vendor/bootstrap/dist/css/bootstrap.min.css")
+    link(rel="stylesheet", href="/vendor/font-awesome/css/font-awesome.min.css")
+    link(rel="stylesheet", href="/vendor/nvd3/build/nv.d3.min.css")
+    
+    title KHDC - KPI Management System
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+  body
+    nav.navbar.navbar-dark.bg-primary.fg-white.navbar-fixed-top
+      a.navbar-brand(href="#")
+        i.fa.fa-windows
+        &nbsp; KPI Management System
+        
+      ul.nav.navbar-nav.hidden-md-up
+        li.nav-item
+          a.nav-link(href="#", data-toggle="tooltip" data-placement="bottom" title="หน้าหลัก")
+            i.fa.fa-home
+        li.nav-item
+          a.nav-link(href="#", data-toggle="tooltip" data-placement="bottom" title="ตัวชี้วัดกระทรวง")
+            i.fa.fa-bar-chart
+        li.nav-item
+          a.nav-link(href="#", data-toggle="tooltip" data-placement="bottom" title="ตัวชี้วัดเชต")
+            i.fa.fa-search
+        li.nav-item
+          a.nav-link(href="#", data-toggle="tooltip" data-placement="bottom" title="ตัวชี้วัดจังหวัด")
+            i.fa.fa-pie-chart
+        li.nav-item
+          a.nav-link(href="#", data-toggle="tooltip" data-placement="bottom" title="ตัวชี้วัด QOF")
+            i.fa.fa-send-o
+    
+      form.form-inline.navbar-form.pull-right.hidden-sm-down
+        input.form-control(type="text", style="width: 350px;", placeholder="ค้นหาตัวชี้วัด...")
+        | &nbsp;
+        button.btn.btn-info-outline(type="button")
+          i.fa.fa-search 
+          | &nbsp; ค้นหา
+    
+    .container-fluid
+      .row
+        .col-md-3.hidden-md-down
+          .list-group
+            a(href="#/").list-group-item.active
+              i.fa.fa-home
+              | &nbsp; เมนูหลัก
+            a(href="#/", ng-class="{'active': menuItem == 0}").list-group-item
+              i.fa.fa-bar-chart
+              | &nbsp; ตัวชี้วัดกระทรวง
+            a(href="#/", ng-class="{'active': menuItem == 0}").list-group-item
+              i.fa.fa-search
+              | &nbsp; ตัวชี้วัดเขต
+            a(href="#/", ng-class="{'active': menuItem == 0}").list-group-item
+              i.fa.fa-pie-chart
+              | &nbsp; ตัวชี้วัดจังหวัด
+            a(href="#/", ng-class="{'active': menuItem == 0}").list-group-item
+              i.fa.fa-send-o
+              | &nbsp; ตัวชี้วัด QOF
+        .col-md-9.col-sm-12
+          .row(style="padding-bottom: 5px;").hidden-md-up
+            .col-sm-12
+              .input-group
+                input(type="text", placeholder="ค้นหาตัวชี้วัด...").form-control
+                span.input-group-btn
+                  button.btn.btn-primary(type="button")
+                    i.fa.fa-search
+                    | &nbsp; ค้นหา
+          
+          block content
+
+    footer.footer
+      .container
+        p.text-muted
+          strong &copy;2015
+          | &nbsp; ศูนย์ข้อมูล โรงพยาบาลกันทรวิชัย
+          
+    
+    script(src="/vendor/angular/angular.js")
+    script(src="/vendor/jquery/dist/jquery.min.js")
+    script(src="/vendor/tether/dist/js/tether.min.js")
+    script(src="/vendor/bootstrap/dist/js/bootstrap.min.js")
+    script(src="/vendor/angular-ui-router/release/angular-ui-router.js")  
+    
+    script(src="/vendor/d3/d3.min.js")
+    script(src="/vendor/nvd3/build/nv.d3.min.js")
+    script(src="/vendor/angular-nvd3/dist/angular-nvd3.min.js")
+    
+    script.
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+      })
+    //- Application scripts    
+    script(src="/javascripts/App.js")
+      
+    block scripts      
